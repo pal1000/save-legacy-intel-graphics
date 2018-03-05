@@ -44,7 +44,7 @@ Cons:
 - basic HTML and XML knowledge is needed;
 - cannot fix protected processes like Virtualbox.
 
-3. create a compatibility shim with Win81RTMVersionLie fix for Intel OpenGL driver applied to affected programs individually
+3. create a compatibility shim with Win81RTMVersionLie fix for Intel OpenGL driver applied to affected programs individually (this is the method used by this project)
 
 Pros:
 - cleanest method (it doesn't touch the program directly);
