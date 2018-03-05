@@ -16,12 +16,13 @@ In order to fix any problem we must understand its root cause. In the early days
 
 ### Determine if a program is affected without running it (for advanced users)
 It is possible to determine if a program is affected by inspecting its manifest if exists as shown in this video
-[![Play](//pal1000.github.io/shared/tutorials/video.png)](//pal1000.github.io/shared/tutorials/detect-win10-compat-advertising.mov)
+[![Play](https://pal1000.github.io/shared/tutorials/video.png)](https://pal1000.github.io/shared/tutorials/detect-win10-compat-advertising.mov)
 
 ### Ways to fix this problem
 1. patch Intel OpenGL driver to recognize Windows 10 major version
 
-Done by [Marcinosoft](//github.com/Marcinosoft) for various Intel GPU generations. DLLs are scattered throughout [this issue thread](https://github.com/LWJGL/lwjgl/issues/119).
+Done by [Marcinosoft](https://github.com/Marcinosoft) for various Intel GPU generations. DLLs are scattered throughout [this issue thread](https://github.com/LWJGL/lwjgl/issues/119).
+
 Pros:
 - it fixes all affected programs at once if enough effort is put into overcoming the cons.
 
@@ -32,6 +33,7 @@ Cons:
 - if you use the easy route of pre-patched DLLs prepare for serious malware risk.
 
 2. Alter or remove the manifest of programs lacking OpenGL support (remove the tag that contains `{8` unique identifier from the manifest)
+
 Pros:
 - less risky than OpenGL driver patching.
 
@@ -43,10 +45,11 @@ Cons:
 - cannot fix protected processes like Virtualbox.
 
 3. create a compatibility shim with Win81RTMVersionLie fix for Intel OpenGL driver applied to affected programs individually
+
 Pros:
 - cleanest method (it doesn't touch the program directly);
 - it is mass deployment friendly (we can create a repository of fixes with people picking the ones they need);
-- Microsoft can create a master fix that works for all affected programs, it might even work in kernel mode and for programs using protected process APIs like Virtualbox. Feedback suggesting this enhancement is filed [here](//aka.ms/Sn9jtj).
+- Microsoft can create a master fix that works for all affected programs, it might even work in kernel mode and for programs using protected process APIs like Virtualbox. Feedback suggesting this enhancement is filed [here](https://aka.ms/Sn9jtj).
 
 Cons:
 - cannot fix kernel mode and protected processes like Virtualbox;
@@ -54,4 +57,4 @@ Cons:
 - creation of fixes requires decent knowledge in using Compatibility Administrator tool.
 
 Video tutorial on creating a compatibility shim with Win81RTMVersionLie fix is below
-[![Play](//pal1000.github.io/shared/tutorials/video.png)](//pal1000.github.io/shared/tutorials/legacy-igpu-ogl-fix-win10.mov)
+[![Play](https://pal1000.github.io/shared/tutorials/video.png)](https://pal1000.github.io/shared/tutorials/legacy-igpu-ogl-fix-win10.mov)
