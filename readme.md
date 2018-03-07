@@ -49,11 +49,11 @@ Cons:
 Pros:
 - cleanest method (it doesn't touch the program directly);
 - it is mass deployment friendly (we can create a repository of fixes with people picking the ones they need);
-- Microsoft can create a master fix that works for all affected programs, it might even work in kernel mode and for programs using protected process APIs like Virtualbox. Feedback suggesting this enhancement is filed [here](https://aka.ms/Sn9jtj).
+- using its internal version of Compatibility Administrator Microsoft can create a master fix that works for all affected programs, it might even work in kernel mode and for programs using protected process APIs like Virtualbox. Feedback suggesting this enhancement is filed [here](https://aka.ms/Sn9jtj).
 
 Cons:
-- cannot fix kernel mode and protected processes like Virtualbox;
-- can only fix affected programs individually;
+- public version of Compatibility Administrator cannot fix kernel mode and protected processes like Virtualbox;
+- public version of Compatibility Administrator can only fix affected programs individually;
 - creation of fixes requires decent knowledge in using Compatibility Administrator tool.
 
 Video tutorial on creating a compatibility shim with Win81RTMVersionLie fix is below
