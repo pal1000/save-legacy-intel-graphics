@@ -28,7 +28,7 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-if %PROCESSOR_ARCHITECTURE%==AMD64 sdbinst x64\java-runtime-environment.sdb
+if /I %PROCESSOR_ARCHITECTURE%==AMD64 sdbinst x64\java-runtime-environment.sdb
 sdbinst x86\java-runtime-environment.sdb
 pause
 exit

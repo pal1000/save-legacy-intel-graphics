@@ -28,6 +28,6 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-if %PROCESSOR_ARCHITECTURE%==AMD64 sdbinst x64\VCV-Rack.sdb
+if /I %PROCESSOR_ARCHITECTURE%==AMD64 sdbinst x64\VCV-Rack.sdb
 pause
 exit

@@ -28,7 +28,7 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-if %PROCESSOR_ARCHITECTURE%==AMD64 sdbinst x64\python.sdb
+if /I %PROCESSOR_ARCHITECTURE%==AMD64 sdbinst x64\python.sdb
 sdbinst x86\python.sdb
 pause
 exit
