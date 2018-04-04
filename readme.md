@@ -9,9 +9,9 @@ Note [1]: Intel GMA 910 and 915 series released in 2004 and 2005 respectively di
 
 ### End-user guide
 - download the whole code as ZIP and extract it;
-- double-click the .cmd file intended for the program you want to fix OpenGL for [*],
+- double-click the .cmd file intended for the program you want to fix OpenGL for [2],
 
-[*] Some program fixes included are for software runtimes like Java. If your program is using such runtime make sure you apply the fix for the runtime first and see if the issue goes away. You don't want to waste both mine and your time with an invalid contribution like the individual from [here](https://communities.intel.com/thread/123618) did.
+[2] Some program fixes included are for software runtimes like Java. If your program is using such runtime make sure you apply the fix for the runtime first and see if the issue goes away. You don't want to waste both mine and your time with an invalid contribution like the individual from [here](https://communities.intel.com/thread/123618) did.
 
 If a program has both 32-bit and 64-bit versions and you have only one of them installed, the one you don't have gets fixed in advance in case you install it at a later date see [#1](https://github.com/pal1000/save-legacy-intel-opengl/issues/1).
 
@@ -35,8 +35,7 @@ Pros:
 Cons:
 - breaks digital signature of the OpenGL driver which needs fixing by removing it and replacing it with new code signature to retain compatibility with protected processes like Virtualbox;
 - if downloading a pre-patched copy from Internet (not recommended) it must be for your Intel GPU generation;
-- this method is dirty and prone to serious error and require serious coding skills to perform;
-- if you use the easy route of pre-patched DLLs prepare for serious malware risk.
+- this is the riskiest method.
 
 2. Alter or remove the manifest of programs lacking OpenGL support (remove the tag that contains `{8` unique identifier from the manifest)
 
@@ -50,7 +49,19 @@ Cons:
 - basic HTML and XML knowledge is needed;
 - cannot fix protected processes like Virtualbox.
 
-3. create a compatibility shim with Win81RTMVersionLie fix for Intel OpenGL driver applied to affected programs individually (this is the method used by this project)
+3. Use [Mesa3D](https://github.com/pal1000/mesa-dist-win) as an alternative software renderer to Windows inbox OpenGL 1.1 software renderer. Install Mesa3D desktop OpenGL drivers using system-wide deployment tool.
+
+Pros:
+- Supports OpenGL 3.3 while OpenGL supported by affected drivers even when fixed barely get to OpenGL 3.1;
+- it fixes all affected programs at once;
+- since it's a software rasterizer it works through RDP. GPU OpenGL doesn't work through RDP;
+- can be installed even if GPU OpenGL is working correctly, e.g. just to get RDP OpenGL support.
+
+Cons:
+- not digitally signed but you can sign it with an Ascertia Free Try code signing certificate if you want;
+- far slower than the GPU since it is still a software renderer.
+
+4. create a compatibility shim with Win81RTMVersionLie fix for Intel OpenGL driver applied to affected programs individually (this is the method used by this project)
 
 Pros:
 - cleanest method (it doesn't touch the program directly);
