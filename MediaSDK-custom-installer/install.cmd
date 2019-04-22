@@ -44,7 +44,7 @@ if '%errorlevel%' NEQ '0' (
 @REG ADD HKLM\SOFTWARE\Intel\MediaSDK\Dispatch\%deviceid% /v APIVersion /t REG_DWORD /d 0x104 /f
 @REG ADD HKLM\SOFTWARE\Intel\MediaSDK\Dispatch\%deviceid% /v DeviceID /t REG_DWORD /d 0x%deviceid% /f
 @REG ADD HKLM\SOFTWARE\Intel\MediaSDK\Dispatch\%deviceid% /v Merit /t REG_DWORD /d 0x800005f /f
-@REG ADD HKLM\SOFTWARE\Intel\MediaSDK\Dispatch\%deviceid% /v Path /t REG_SZ /d "C:\Program Files (x86)\Intel\Media SDK\libmfxhw64.dll" /f
+@REG ADD HKLM\SOFTWARE\Intel\MediaSDK\Dispatch\%deviceid% /v Path /t REG_SZ /d "%ProgramFiles(x86)%\Intel\Media SDK\libmfxhw64.dll" /f
 @REG ADD HKLM\SOFTWARE\Intel\MediaSDK\Dispatch\%deviceid% /v VendorID /t REG_DWORD /d 0x8086 /f
 
 @REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK /ve /f
@@ -53,7 +53,7 @@ if '%errorlevel%' NEQ '0' (
 @REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK\Dispatch\%deviceid% /v APIVersion /t REG_DWORD /d 0x104 /f
 @REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK\Dispatch\%deviceid% /v DeviceID /t REG_DWORD /d 0x%deviceid% /f
 @REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK\Dispatch\%deviceid% /v Merit /t REG_DWORD /d 0x800005f /f
-@REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK\Dispatch\%deviceid% /v Path /t REG_SZ /d "C:\Program Files (x86)\Intel\Media SDK\libmfxhw32.dll" /f
+@REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK\Dispatch\%deviceid% /v Path /t REG_SZ /d "%ProgramFiles(x86)%\Intel\Media SDK\libmfxhw32.dll" /f
 @REG ADD HKLM\SOFTWARE\WOW6432Node\Intel\MediaSDK\Dispatch\%deviceid% /v VendorID /t REG_DWORD /d 0x8086 /f
 
 @rem Copy MediaSDK files
